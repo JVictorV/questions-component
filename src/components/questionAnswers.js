@@ -77,21 +77,10 @@ class QuestionAnswers extends React.Component {
         const { data } = this.props;
         const { categoryId, questionId } = this.state;
 
-        let categoryIndex = data.categories.findIndex(x => x.categoryId === categoryId);
-        let questionIndex = data.categories[categoryIndex].questions.findIndex(x => x.questionId === questionId);
+        const categoryIndex = data.categories.findIndex(x => x.categoryId === categoryId);
+        const questionIndex = data.categories[categoryIndex].questions.findIndex(x => x.questionId === questionId);
 
-        questionIndex--;
-        categoryIndex--;
-
-        if (questionIndex < 0) {
-            if(categoryIndex < 0) {
-                return false;
-            } else {
-                return true;
-            }
-        } else {
-            return true;
-        }
+        return questionIndex - 1 >= 0 || categoryIndex - 1 >= 0
     }
 
     toPreviousQuestion() {
@@ -222,7 +211,7 @@ class QuestionAnswers extends React.Component {
             finishedCategories = {
                 categoryId: category.categoryId,
                 content: category.content,
-                questions: new Array()
+                questions: []
             };
         } else {
             finishedCategories = path.categories[categoryIndex];

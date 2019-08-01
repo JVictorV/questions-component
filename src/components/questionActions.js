@@ -7,7 +7,7 @@ class QuestionActions extends React.Component {
         super(props);
 
         this.state = {
-            selectedAnswers: this.props.currentAnswers ? this.props.currentAnswers : new Array(),
+            selectedAnswers: this.props.currentAnswers || [],
             deepQuestion: undefined,
         };
 
@@ -105,7 +105,7 @@ class QuestionActions extends React.Component {
                 content: text
             };
 
-            this.toggleArray(value, question.type === 'multiple' ? true : false, !text);
+            this.toggleArray(value, question.type === 'multiple', !text);
         }
     }
 
@@ -119,7 +119,7 @@ class QuestionActions extends React.Component {
                 content: image
             };
 
-            this.toggleArray(value, question.type === 'multiple' ? true : false, !image);
+            this.toggleArray(value, question.type === 'multiple', !image);
         }
     }
 
@@ -162,7 +162,7 @@ class QuestionActions extends React.Component {
             const { question } = this.props;
             const { selectedAnswers } = this.state;
 
-            this.setState({ selectedAnswers: new Array() });
+            this.setState({ selectedAnswers: [] });
 
             // And then go to the next question
             this.props.toNextQuestion({
@@ -177,7 +177,7 @@ class QuestionActions extends React.Component {
         const { selectedAnswers } = this.state;
 
         // Disable next button if there's no selected answer
-        return selectedAnswers && selectedAnswers.length > 0 ? true : false;
+        return selectedAnswers && selectedAnswers.length > 0;
     }
 }
 
