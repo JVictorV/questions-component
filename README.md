@@ -8,7 +8,7 @@ npm i @app-masters/questions-component --save
 
 ## Usage
 
-**Before using the component, follow the installation and usage steps of each dependecy(look down) first.**
+**Before using the component, follow the installation and usage steps of each dependency(look down) first.**
 
 The starting point component is the ```QuestionAnswers``` component, you just got to import it, and call it giving the views you want to use.
 
@@ -100,11 +100,11 @@ These are the component properties, and *all of them are required*:
 
 - **[app-masters/react-native-ui-kit](https://github.com/app-masters/react-native-ui-kit)**: The component uses this ui kit for some of its styling.
 
-**Before using the component, follow the installation and usage steps of each dependecy first.**
+**Before using the component, follow the installation and usage steps of each dependency first.**
 
 ## Known errors
 - If you get the error ```TypeError: Cannot read property 'ph3' of null```:  
-    You are not calling ```startStyles(AppStyles)``` from the [app-masters/react-native-ui-kit](https://github.com/app-masters/react-native-ui-kit) dependecy. Check this dependecy installation instructions.
+    You are not calling ```startStyles(AppStyles)``` from the [app-masters/react-native-ui-kit](https://github.com/app-masters/react-native-ui-kit) dependency. Check this dependency installation instructions.
 
 ## Data example
 This is an example of the metadata Json:
